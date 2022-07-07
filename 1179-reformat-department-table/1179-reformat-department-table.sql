@@ -26,4 +26,4 @@ ON D.id = Q10.id
 LEFT JOIN (SELECT id, revenue AS Nov_Revenue FROM Department WHERE month = 'Nov') AS Q11
 ON D.id = Q11.id
 LEFT JOIN (SELECT id, revenue AS Dec_Revenue FROM Department WHERE month = 'Dec') AS Q12
-ON D.id = Q12.id;
+ON D.id = Q12.id ;
