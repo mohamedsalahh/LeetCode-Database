@@ -1,8 +1,8 @@
 # Write your MySQL query statement below
 
 
-SELECT DISTINCT D.id, Jan_Revenue, Feb_Revenue, Mar_Revenue, Apr_Revenue, May_Revenue, Jun_Revenue, Jul_Revenue, Aug_Revenue, Sep_Revenue, Oct_Revenue, Nov_Revenue, Dec_Revenue
-FROM Department AS D
+SELECT D.id, Jan_Revenue, Feb_Revenue, Mar_Revenue, Apr_Revenue, May_Revenue, Jun_Revenue, Jul_Revenue, Aug_Revenue, Sep_Revenue, Oct_Revenue, Nov_Revenue, Dec_Revenue
+FROM (SELECT DISTINCT id FROM Department) AS D
 LEFT JOIN (SELECT id, revenue AS Jan_Revenue FROM Department WHERE month = 'Jan') AS Q1
 ON D.id = Q1.id
 LEFT JOIN (SELECT id, revenue AS Feb_Revenue FROM Department WHERE month = 'Feb') AS Q2
